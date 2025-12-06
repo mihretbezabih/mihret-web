@@ -43,8 +43,6 @@ def main_menu():
 			print("Goodbye!")
 			break
 		else:
-			print("Invalid choice. Try again.")
-
-
+			print("Invalid choice. Try again")
 if __name__ == "__main__":
 	main_menu()
