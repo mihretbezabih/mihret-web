@@ -1,15 +1,20 @@
 appliances = []
 
 def register_appliance(name, watt, quantity, usage_hours):
-    appliance = {
-        "name": name,
-        "watt": watt,
-        "quantity": quantity,
-        "usage_hours": usage_hours,
-    }
-    appliances.append(appliance)
-    print(f"Appliance registered: {name} (W:{watt}, Q:{quantity}, H:{usage_hours})")
+	item = {
+		"name": name,
+		"watt": watt,
+		"quantity": quantity,
+		"usage_hours": usage_hours,
+	}
+	appliances.append(item)
+	print("Appliance registered successfully!")
 
 
 def list_appliances():
-    return appliances
+	if not appliances:
+		print("No appliances registered.")
+		return
+	print("\nAppliance List:")
+	for a in appliances:
+		print(f"{a['name']} - {a['watt']}W, Qty: {a['quantity']}, Usage: {a['usage_hours']} hrs/day")
