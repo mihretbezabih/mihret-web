@@ -1,15 +1,15 @@
 
 def calculate_bill(total_consumption):
-	"""Calculate the bill from total consumption (kWh).
+	"""Return total payable bill for a monthly consumption (kWh).
 
-	The function accepts numeric input and returns the total payable amount
-	(energy cost + service charge). Raises TypeError for invalid input.
+	Converts input to float and raises `TypeError` for invalid input.
 	"""
 	try:
 		total = float(total_consumption)
 	except (TypeError, ValueError):
 		raise TypeError("total_consumption must be a number")
 
+	# Step 1: Energy cost based on tariff
 	if total <= 50:
 		energy_cost = total * 0.273
 		service_charge = 10
@@ -32,5 +32,6 @@ def calculate_bill(total_consumption):
 		energy_cost = total * 2.481
 		service_charge = 42
 
+	# Step 2: Total bill = energy cost + service charge
 	return energy_cost + service_charge
 
